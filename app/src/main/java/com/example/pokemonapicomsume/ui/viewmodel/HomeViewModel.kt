@@ -1,6 +1,7 @@
 package com.example.pokemonapicomsume.ui.viewmodel
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -32,10 +33,13 @@ class HomeViewModel(
     }
 
     fun onSubmit(pokemon: String, context: Context){
+        println(pokemon)
+        Log.d("PokemonMessage", pokemon)
         viewModelScope.launch {
             _isLoading.value = true
             pokemonRepository.getPokemon(pokemon).onSuccess {
                 _pokemonFound.value = it
+                Log.d("PokemonMessage", it.toString())
             }.onFailure {
                 Toast.makeText(context, "No se encontró al pokemon.", Toast.LENGTH_SHORT).show()
             }

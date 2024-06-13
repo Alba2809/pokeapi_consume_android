@@ -15,4 +15,6 @@ val Background = Color(0xFFafd4ff)
 val CardPokemon = Color(0xFFE9E9EB)
 val InfoCardPokemon = Color(0xFFF2F2F2)
 
+val BorderColor = Color(0xFFE0E0E0)
+
 val DarkPrimary = Color(0xFF4675c1)

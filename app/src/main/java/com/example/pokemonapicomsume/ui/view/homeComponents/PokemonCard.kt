@@ -34,22 +34,22 @@ import com.example.pokemonapicomsume.ui.theme.InfoCardPokemon
 
 @Preview
 @Composable
-fun PokemonCard(pokemon: Pokemon? = null) {
+fun PokemonCard(modifier: Modifier = Modifier, pokemon: Pokemon? = null) {
     Card(
         colors = CardDefaults.cardColors(
             containerColor = CardPokemon,
         ),
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(15.dp)
     ) {
-        HeaderCard()
+        HeaderCard(pokemon?.id, pokemon?.name)
         AsyncImage(
             model = pokemon?.sprites?.front_default ?: R.drawable.pokeball,
             contentDescription = "Imagen del pokemon ${pokemon?.name ?: ""}",
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(15.dp)
+                .weight(1f)
         )
         InfoPokemon(pokemon)
         AudioPokemon(pokemon?.cries)
@@ -58,7 +58,7 @@ fun PokemonCard(pokemon: Pokemon? = null) {
 }
 
 @Composable
-fun HeaderCard(numberPokemon: Int = 0, namePokemon: String = "...") {
+fun HeaderCard(numberPokemon: Int?, namePokemon: String?) {
     Row(
         modifier = Modifier
             .padding(10.dp)
@@ -66,13 +66,13 @@ fun HeaderCard(numberPokemon: Int = 0, namePokemon: String = "...") {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = "#${numberPokemon}",
+            text = "#${numberPokemon ?: 0}",
             modifier = Modifier.padding(10.dp),
             fontWeight = FontWeight.Medium,
             fontSize = 18.sp
         )
         Text(
-            text = namePokemon,
+            text = namePokemon ?: "...",
             modifier = Modifier.padding(10.dp),
             fontWeight = FontWeight.Bold,
             fontSize = 18.sp
@@ -84,7 +84,7 @@ fun HeaderCard(numberPokemon: Int = 0, namePokemon: String = "...") {
 fun InfoPokemon(pokemon: Pokemon?) {
     Column(
         modifier = Modifier
-            .padding(15.dp)
+            .padding(start = 15.dp, end = 15.dp, bottom = 15.dp, top = 8.dp)
             .clip(RoundedCornerShape(15.dp))
             .background(InfoCardPokemon)
             .fillMaxWidth()
@@ -101,14 +101,17 @@ fun InfoPokemon(pokemon: Pokemon?) {
                 .fillMaxWidth(),
             Arrangement.SpaceAround
         ) {
-            InfoItem(R.drawable.height_icon, pokemon?.height?.div(10) ?: 0, "m")
-            InfoItem(R.drawable.weight_icon, pokemon?.weight?.div(10) ?: 0, "kg")
+            val height = pokemon?.height?.toDouble()?.div(10) ?: 0.0
+            val weight = pokemon?.weight?.toDouble()?.div(10) ?: 0.0
+
+            InfoItem(R.drawable.height_icon, height, "m")
+            InfoItem(R.drawable.weight_icon, weight, "kg")
         }
     }
 }
 
 @Composable
-fun InfoItem(icon: Int, value: Int, unitValue: String) {
+fun InfoItem(icon: Int, value: Double, unitValue: String) {
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {

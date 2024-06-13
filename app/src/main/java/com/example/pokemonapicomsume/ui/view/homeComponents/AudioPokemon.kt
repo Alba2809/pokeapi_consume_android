@@ -51,7 +51,9 @@ fun AudioPokemon(cries: Cries?) {
             modifier = Modifier.padding(10.dp)
         )
         Row(
-            modifier = Modifier.fillMaxWidth().padding(start = 10.dp, end = 10.dp, bottom = 10.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 10.dp, end = 10.dp, bottom = 10.dp),
             horizontalArrangement = Arrangement.SpaceAround
         ){
             cries.let {
@@ -94,7 +96,12 @@ fun ButtonCry(context: Context, audio: String, title: String) {
                 modifier = Modifier.size(35.dp)
             )
             Spacer(modifier = Modifier.width(5.dp))
-            Text(text = title, fontSize = 18.sp, fontWeight = FontWeight.Medium)
+            Text(
+                text = title,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Black
+            )
         }
     }
 }

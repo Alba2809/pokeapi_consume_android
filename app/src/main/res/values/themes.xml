@@ -2,4 +2,12 @@
 <resources>
 
     <style name="Theme.PokemonApiComsume" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@color/white</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Theme.PokemonApiComsume</item>
+        <!--        <item name="android:windowSplashScreenBrandingImage">@drawable/logo_pokemon</item>-->
+    </style>
 </resources>

@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -66,6 +67,7 @@ fun PokemonForm(
                 onValueChange = { onValueChange(it) },
                 modifier = Modifier
                     .fillMaxWidth(),
+                textStyle = TextStyle(color = Color.DarkGray),
                 colors = TextFieldDefaults.colors(
                     unfocusedContainerColor = Color.Transparent,
                     focusedContainerColor = Color.Transparent,
@@ -74,7 +76,7 @@ fun PokemonForm(
                     cursorColor = Color.DarkGray
                 ),
                 placeholder = {
-                    Text(text = "Search", color = Color.LightGray, fontSize = 18.sp)
+                    Text(text = "Search", fontSize = 18.sp)
                 },
                 singleLine = true,
                 maxLines = 1,

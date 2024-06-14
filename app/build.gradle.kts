@@ -64,6 +64,9 @@ dependencies {
     //Async Image
     implementation("io.coil-kt:coil-compose:2.6.0")
 
+    //Splash Screen
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

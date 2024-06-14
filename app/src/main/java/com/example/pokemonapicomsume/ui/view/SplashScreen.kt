@@ -16,6 +16,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
@@ -24,7 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.pokemonapicomsume.R
 import com.example.pokemonapicomsume.navigation.AppScreens
-import com.example.pokemonapicomsume.ui.theme.Background
 import kotlinx.coroutines.delay
 
 @Composable
@@ -52,7 +52,7 @@ fun SplashBody() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Background),
+            .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

@@ -19,7 +19,7 @@ fun Header() {
         modifier = Modifier
             .bottomBorder(1.dp, Color.LightGray)
             .fillMaxWidth()
-            .padding(top = 20.dp, start = 10.dp, bottom = 10.dp, end = 10.dp),
+            .padding(top = 30.dp, start = 10.dp, bottom = 10.dp, end = 10.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(text = "Buscar Pokemon", fontSize = 20.sp, fontWeight = FontWeight.SemiBold)

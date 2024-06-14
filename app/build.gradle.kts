@@ -51,6 +51,7 @@ android {
 
 dependencies {
     //navigation
+    //noinspection UseTomlInstead
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     // Retrofit
@@ -62,10 +63,12 @@ dependencies {
     implementation("com.google.code.gson:gson:2.11.0")
 
     //Async Image
+    //noinspection UseTomlInstead
     implementation("io.coil-kt:coil-compose:2.6.0")
 
     //Splash Screen
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    //noinspection UseTomlInstead
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

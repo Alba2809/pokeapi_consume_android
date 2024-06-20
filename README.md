@@ -9,13 +9,13 @@ PokeDex es una aplicación de Android construida con Jetpack Compose que utiliza
 
 ## Capturas de Pantalla
 Pantalla de Inicio
-![Inicio](screenshots/splashscreen.png)
+<img src="screenshots/splashscreen.png" alt="Inicio" width="300" />
 
 Pantalla de Búsqueda Vacía
-![Vacia](screenshots/main_empty.png)
+<img src="screenshots/main_empty.png" alt="Vacia" width="300" />
 
 Pantalla de Resultado de Búsqueda (Pikachu)
-![Llena](screenshots/main_request.png)
+<img src="screenshots/main_request.png" alt="Llena" width="300" />
 
 ## Instalación
 1. Clonar el repositorio:
